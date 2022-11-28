@@ -121,6 +121,16 @@ class ChargeRequest extends AbstractRequest
         return $this->setParameter('note', $value);
     }
 
+    public function getVerificationToken()
+    {
+        return $this->getParameter('verificationToken');
+    }
+
+    public function setVerificationToken($value)
+    {
+        return $this->setParameter('verificationToken', $value);
+    }
+
     public function getData()
     {
         $data = [];
@@ -137,6 +147,7 @@ class ChargeRequest extends AbstractRequest
         $data['reference_id'] = $this->getReferenceId();
         $data['order_id'] = $this->getOrderId();
         $data['note'] = $this->getNote();
+        $data['verification_token'] = $this->getVerificationToken();
 
         return $data;
     }
